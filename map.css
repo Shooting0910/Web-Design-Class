@@ -1,0 +1,61 @@
+#map {
+    height: 100%;
+    position: relative;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.custom-map-control-button {
+    /* 點 (.) 來代表現行目錄的名稱 */
+    background-image:url(./pic/navigation.svg) ;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    background-color: #fff;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 0 0.5em;
+    height: 75px;
+    width: 75px;
+    cursor: pointer;
+    transform: translate(34vw, 70vh);
+}
+.custom-map-control-button:hover {
+    background: rgb(235, 235, 235);
+    background-image:url(./pic/navigation.svg) ;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+}
+
+#save-button,#eye-button{
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    background-color: #fff;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    margin: 10px;
+    padding: 0 0.5em;
+    height: 75px;
+    width: 75px;
+    cursor: pointer;
+}
+
+#save-button{
+    background-image:url(./pic/save.svg) ;
+}
+
+#eye-button{
+    background-image:url(./pic/eye.svg) ;
+}

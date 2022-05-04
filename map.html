@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="view point" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <title>google map test</title>
+    <link rel="stylesheet" type="text/css" href="map.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+
+    <div id="map"></div>
+    <button id="save-button" type="button"></button>
+    <button id="eye-button" type="button"></button>
+
+
+
+    <script src="map.js"></script>
+
+    <!-- 先引入 Google API 的網址，接著把 API Key 嵌入到網址 key 參數裡-->
+    <!-- 即 key="API金鑰" -->
+    <script async 
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhKNAz1QNOs5XNq3qB1Y2x9olOZHCozK8&callback=initMap"
+      defer
+    ></script>
+  </body>
+</html>
+
