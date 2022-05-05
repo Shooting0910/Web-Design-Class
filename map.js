@@ -249,7 +249,6 @@ function initMap() {
     infoWindow = new google.maps.InfoWindow();
 
     const locationButton = document.createElement("button");
-
     // locationButton.textContent = "Show Current Location";
     locationButton.classList.add("custom-map-control-button");
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);

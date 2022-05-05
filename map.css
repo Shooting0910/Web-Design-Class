@@ -1,6 +1,5 @@
 #map {
-    height: 100%;
-    position: relative;
+    height: 94%;
 }
 
 html,
@@ -35,7 +34,7 @@ body {
     background-position: center;
 }
 
-#save-button,#eye-button{
+/* #save-button,#eye-button{
     position: absolute;
     z-index: 1;
     background-repeat: no-repeat;
@@ -58,4 +57,45 @@ body {
 
 #eye-button{
     background-image:url(./pic/eye.svg) ;
+} */
+
+#navbar{
+    height: 6%;
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+div.icon{
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 23%;
+    background-size:20% ;
+    height: 83%;
+}
+
+div.icon:hover{
+    border-radius: 15px;
+    background-color: rgb(219, 217, 217);
+}
+
+.icon.search{
+    background-image: url(./pic/explor.svg);
+}
+
+.icon.scooter{
+    background-image: url(./pic/scooter.svg);
+}
+
+.icon.social{
+    background-image: url(./pic/social.svg);
+}
+
+.icon.profile{
+    background-image: url(./pic/profile.svg);
+}
+
+
