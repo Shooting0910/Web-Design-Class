@@ -9,6 +9,22 @@ body {
     padding: 0;
 }
 
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    /* border: 1px solid #999; */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    font-family: "Roboto", "sans-serif";
+    line-height: 30px;
+    padding-left: 10px;
+    transform: translate(125%);
+}
+
 .custom-map-control-button {
     /* 點 (.) 來代表現行目錄的名稱 */
     background-image:url(./pic/navigation.svg) ;
@@ -18,13 +34,14 @@ body {
     background-color: #fff;
     border: 0;
     border-radius: 50%;
-    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3); */
     margin: 10px;
     padding: 0 0.5em;
-    height: 75px;
-    width: 75px;
+    height: 85px;
+    width: 85px;
     cursor: pointer;
-    transform: translate(34vw, 70vh);
+    transform: translate(35vw, 75vh);
 }
 .custom-map-control-button:hover {
     background: rgb(235, 235, 235);
@@ -34,7 +51,7 @@ body {
     background-position: center;
 }
 
-/* #save-button,#eye-button{
+#save-button,#eye-button{
     position: absolute;
     z-index: 1;
     background-repeat: no-repeat;
@@ -43,21 +60,48 @@ body {
     background-color: #fff;
     border: 0;
     border-radius: 50%;
-    box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 10px;
     padding: 0 0.5em;
-    height: 75px;
-    width: 75px;
+    height: 120px;
+    width: 120px;
     cursor: pointer;
 }
 
 #save-button{
     background-image:url(./pic/save.svg) ;
+    transform: translate(8vw, 4vh);
 }
 
 #eye-button{
     background-image:url(./pic/eye.svg) ;
-} */
+    transform: translate(80vw, 4vh);
+}
+
+#i-help{
+    position: absolute;
+    z-index: 1;
+    background-image: url(./pic/Group\ 344.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 3.8vh;
+    width: 15vw;
+    transform: translate(8vw, 75vh);
+}
+
+#scan-button{
+    background-color: rgb(57, 122, 218);
+    border: 0;
+    border-radius: 20px;
+    height: 6.3vh;
+    width: 84vw;
+    background-position: center;
+    position: absolute;
+    z-index: 1;
+    transform: translate(8vw, 82vh);
+    font-size: 20pt;
+    color: white;
+}
 
 #navbar{
     height: 6%;

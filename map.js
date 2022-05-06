@@ -1,6 +1,8 @@
-let map, infoWindow, marker;
+let map, infoWindow, currentPositionMarker;
 
 function initMap() {
+    const directionsService = new google.maps.DirectionsService();
+    const directionsRenderer = new google.maps.DirectionsRenderer();
 
     // ---------------- 初始化地圖，並將地圖載入指定的 div 內 ----------------
     map = new google.maps.Map(document.getElementById("map"), {
@@ -17,177 +19,37 @@ function initMap() {
         //設定地圖樣式
         styles:[
             {
-                "featureType": "water",
+                "featureType": "administrative",
                 "elementType": "geometry",
                 "stylers": [
-                    {
-                        "color": "#e9e9e9"
-                    },
-                    {
-                        "lightness": 17
-                    }
-                ]
-            },
-            {
-                "featureType": "landscape",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#f5f5f5"
-                    },
-                    {
-                        "lightness": 20
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#ffffff"
-                    },
-                    {
-                        "lightness": 17
-                    }
-                ]
-            },
-            {
-                "featureType": "road.highway",
-                "elementType": "geometry.stroke",
-                "stylers": [
-                    {
-                        "color": "#ffffff"
-                    },
-                    {
-                        "lightness": 29
-                    },
-                    {
-                        "weight": 0.2
-                    }
-                ]
-            },
-            {
-                "featureType": "road.arterial",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#ffffff"
-                    },
-                    {
-                        "lightness": 18
-                    }
-                ]
-            },
-            {
-                "featureType": "road.local",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#ffffff"
-                    },
-                    {
-                        "lightness": 16
-                    }
+                {
+                    "visibility": "off"
+                }
                 ]
             },
             {
                 "featureType": "poi",
-                "elementType": "geometry",
                 "stylers": [
-                    {
-                        "color": "#f5f5f5"
-                    },
-                    {
-                        "lightness": 21
-                    }
+                {
+                    "visibility": "off"
+                }
                 ]
             },
             {
-                "featureType": "poi.park",
-                "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#dedede"
-                    },
-                    {
-                        "lightness": 21
-                    }
-                ]
-            },
-            {
-                "elementType": "labels.text.stroke",
-                "stylers": [
-                    {
-                        "visibility": "on"
-                    },
-                    {
-                        "color": "#ffffff"
-                    },
-                    {
-                        "lightness": 16
-                    }
-                ]
-            },
-            {
-                "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "saturation": 36
-                    },
-                    {
-                        "color": "#333333"
-                    },
-                    {
-                        "lightness": 40
-                    }
-                ]
-            },
-            {
+                "featureType": "road",
                 "elementType": "labels.icon",
                 "stylers": [
-                    {
-                        "visibility": "off"
-                    }
+                {
+                    "visibility": "off"
+                }
                 ]
             },
             {
                 "featureType": "transit",
-                "elementType": "geometry",
                 "stylers": [
-                    {
-                        "color": "#f2f2f2"
-                    },
-                    {
-                        "lightness": 19
-                    }
-                ]
-            },
-            {
-                "featureType": "administrative",
-                "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#fefefe"
-                    },
-                    {
-                        "lightness": 20
-                    }
-                ]
-            },
-            {
-                "featureType": "administrative",
-                "elementType": "geometry.stroke",
-                "stylers": [
-                    {
-                        "color": "#fefefe"
-                    },
-                    {
-                        "lightness": 17
-                    },
-                    {
-                        "weight": 1.2
-                    }
+                {
+                    "visibility": "off"
+                }
                 ]
             }
         ]
@@ -199,10 +61,13 @@ function initMap() {
             icon: "./pic/scooter_icon.svg",
         },
         food: {
-            icon: "./pic/food.svg",
+            icon: "./pic/Group 400.svg",
         },
         place:{
-            icon:"./pic/location.png"
+            icon:"./pic/Group 397.svg"
+        },
+        park:{
+            icon:"./pic/Group 398.svg"
         }
     };
 
@@ -228,18 +93,62 @@ function initMap() {
             type: "food",
         },
         {
+            position: new google.maps.LatLng(22.9930141, 120.2267743),
+            type: "food",
+        },
+        {
+            position: new google.maps.LatLng(22.9882692, 120.212799),
+            type: "food",
+        },
+        {
             position: new google.maps.LatLng(22.9936595, 120.1918606),
             type: "place",
         },
         {
-            position: new google.maps.LatLng(22.990786, 120.2305143),
+            position: new google.maps.LatLng(22.9973518, 120.2005071),
             type: "place",
+        },
+        {
+            position: new google.maps.LatLng(22.9917925, 120.2003345),
+            type: "place",
+        },
+        {
+            position: new google.maps.LatLng(23.0015754, 120.2138934),
+            type: "park",
+        },
+        {
+            position: new google.maps.LatLng(23.0023909, 120.2184348),
+            type: "park",
+        },
+        {
+            position: new google.maps.LatLng(23.002052, 120.2204054),
+            type: "park",
+        },
+        {
+            position: new google.maps.LatLng(23.0006228, 120.2141547),
+            type: "park",
+        },
+        {
+            position: new google.maps.LatLng(22.9989394, 120.2144953),
+            type: "park",
+        },
+        {
+            position: new google.maps.LatLng(22.996328, 120.2199842),
+            type: "park",
+        },
+        {
+            position: new google.maps.LatLng(22.9956073, 120.2022019),
+            type: "park",
+        },
+        {
+            position: new google.maps.LatLng(22.9922232, 120.2215161),
+            type: "park",
         },
     ];
 
     // Create markers.
     for (let i = 0; i < features.length; i++) {
-        const markers = new google.maps.Marker({
+        const marker = new google.maps.Marker({
         position: features[i].position,
         icon: icons[features[i].type].icon,
         map: map,
@@ -266,10 +175,10 @@ function initMap() {
                 // infoWindow.setPosition(pos);
                 // infoWindow.setContent("Location found.");
                 // infoWindow.open(map);
-                // map.setCenter(pos);
+                map.setCenter(pos);
 
                 //--------下面是呼叫一個新marker------
-                marker = new google.maps.Marker({
+                currentPositionMarker = new google.maps.Marker({
                     //marker的放置位置
                     position: { 
                         lat: position.coords.latitude, 
@@ -290,8 +199,41 @@ function initMap() {
     
     });
 
+    //call renderer to display directions
+    directionsRenderer.setMap(map);
 
+    const onChangeHandler = function () {
+        calculateAndDisplayRoute(directionsService, directionsRenderer);
+    };
 
+    document.getElementById("start").addEventListener("change", onChangeHandler);
+    document.getElementById("end").addEventListener("change", onChangeHandler);
+    }
+
+    function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+    directionsService
+        .route({
+        // origin: {
+        //     query: document.getElementById("start").value,
+        // },
+        // destination: {
+        //     query: document.getElementById("end").value,
+        // },
+        origin: {
+            query: features[i].position ,
+        },
+        destination: {
+            query: features[i].position ,
+        },
+        // origin: features[i].position ,
+        // destination: features[i].position,
+        travelMode: google.maps.TravelMode.BICYCLING,
+        })
+        .then((response) => {
+        directionsRenderer.setDirections(response);
+        })
+        .catch((e) => window.alert("Directions request failed due to " + status));
+        
 }
 
 // function handleLocationError(browserHasGeolocation, infoWindow, pos) {
