@@ -56,104 +56,283 @@ function initMap() {
     });
 
     // ---------------- Customized Markers ----------------
-    const icons = {
-        scooter: {
-            icon: "./pic/scooter_icon.svg",
-        },
-        food: {
-            icon: "./pic/Group 400.svg",
-        },
-        place:{
-            icon:"./pic/Group 397.svg"
-        },
-        park:{
-            icon:"./pic/Group 398.svg"
-        }
-    };
+    // const icons = {
+    //     scooter: {
+    //         icon: "./pic/scooter_icon.svg",
+    //     },
+    //     food: {
+    //         icon: "./pic/Group 400.svg",
+    //     },
+    //     place:{
+    //         icon:"./pic/Group 397.svg"
+    //     },
+    //     park:{
+    //         icon:"./pic/Group 398.svg"
+    //     }
+    // };
 
-    const features = [
-        {
-            position: new google.maps.LatLng(22.9969253, 120.2222067),
-            type: "scooter",
-        },
-        {
-            position: new google.maps.LatLng(22.9849686, 120.2168692),
-            type: "food",
-        },
-        {
-            position: new google.maps.LatLng(23.0058263, 120.2174345),
-            type: "food",
-        },
-        {
-            position: new google.maps.LatLng(22.9864615, 120.2146283),
-            type: "food",
-        },
-        {
-            position: new google.maps.LatLng(23.0087593, 120.2093936),
-            type: "food",
-        },
-        {
-            position: new google.maps.LatLng(22.9930141, 120.2267743),
-            type: "food",
-        },
-        {
-            position: new google.maps.LatLng(22.9882692, 120.212799),
-            type: "food",
-        },
-        {
-            position: new google.maps.LatLng(22.9936595, 120.1918606),
-            type: "place",
-        },
-        {
-            position: new google.maps.LatLng(22.9973518, 120.2005071),
-            type: "place",
-        },
-        {
-            position: new google.maps.LatLng(22.9917925, 120.2003345),
-            type: "place",
-        },
-        {
-            position: new google.maps.LatLng(23.0015754, 120.2138934),
-            type: "park",
-        },
-        {
-            position: new google.maps.LatLng(23.0023909, 120.2184348),
-            type: "park",
-        },
-        {
-            position: new google.maps.LatLng(23.002052, 120.2204054),
-            type: "park",
-        },
-        {
-            position: new google.maps.LatLng(23.0006228, 120.2141547),
-            type: "park",
-        },
-        {
-            position: new google.maps.LatLng(22.9989394, 120.2144953),
-            type: "park",
-        },
-        {
-            position: new google.maps.LatLng(22.996328, 120.2199842),
-            type: "park",
-        },
-        {
-            position: new google.maps.LatLng(22.9956073, 120.2022019),
-            type: "park",
-        },
-        {
-            position: new google.maps.LatLng(22.9922232, 120.2215161),
-            type: "park",
-        },
-    ];
+    // const features = [
+    //     {
+    //         position: new google.maps.LatLng(22.9969253, 120.2222067),
+    //         type: "scooter",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.9849686, 120.2168692),
+    //         type: "food",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(23.0058263, 120.2174345),
+    //         type: "food",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.9864615, 120.2146283),
+    //         type: "food",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(23.0087593, 120.2093936),
+    //         type: "food",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.9930141, 120.2267743),
+    //         type: "food",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.9882692, 120.212799),
+    //         type: "food",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.9936595, 120.1918606),
+    //         type: "place",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.9973518, 120.2005071),
+    //         type: "place",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.9917925, 120.2003345),
+    //         type: "place",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(23.0015754, 120.2138934),
+    //         type: "park",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(23.0023909, 120.2184348),
+    //         type: "park",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(23.002052, 120.2204054),
+    //         type: "park",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(23.0006228, 120.2141547),
+    //         type: "park",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.9989394, 120.2144953),
+    //         type: "park",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.996328, 120.2199842),
+    //         type: "park",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.9956073, 120.2022019),
+    //         type: "park",
+    //     },
+    //     {
+    //         position: new google.maps.LatLng(22.9922232, 120.2215161),
+    //         type: "park",
+    //     },
+    // ];
 
     // Create markers.
-    for (let i = 0; i < features.length; i++) {
-        const marker = new google.maps.Marker({
-        position: features[i].position,
-        icon: icons[features[i].type].icon,
-        map: map,
-        });
+    // for (let i = 0; i < features.length; i++) {
+    //     const marker = new google.maps.Marker({
+    //     position: features[i].position,
+    //     icon: icons[features[i].type].icon,
+    //     map: map,
+    //     });
+    // }
+
+    //Loading data
+    var ob={
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.1950812, 22.999562]
+                },
+                "properties": {
+                    "id": 1,
+                    "type":"food",
+                    "icon": "./pic/Group 444.svg",
+                    "name": "喝我咖啡 Hold My Cafe‘ ",
+                    "starrate": "4.8",
+                    "site":"700台南市中西區康樂街282巷23號",
+                    "distance":"Nearest Wara station 4.1 km",
+                    "phone":"-"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.1943521, 22.9975715]
+                },
+                "properties": {
+                    "id": 2,
+                    "type":"place",
+                    "icon": "./pic/Group 456.svg",
+                    "name": "神農街",
+                    "starrate": "4.5",
+                    "site":"700 台南市中西區神農街",
+                    "distance":"Nearest Wara station 1.8 km",
+                    "phone":"-"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.1932231, 22.9961912]
+                },
+                "properties": {
+                    "id": 3,
+                    "type":"food",
+                    "icon": "./pic/Group 444.svg",
+                    "name": "品果原萃鍋燒專賣‘ ",
+                    "starrate": "4.8",
+                    "site":"700台南市中西區康樂街253號",
+                    "distance":"Nearest Wara station 3.1 km",
+                    "phone":"0981779090"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.1933809, 22.9959239]
+                },
+                "properties": {
+                    "id": 4,
+                    "type":"food",
+                    "icon": "./pic/Group 444.svg",
+                    "name": "一緒二咖啡",
+                    "starrate": "4.5",
+                    "site":"700台南市中西區康樂街160號",
+                    "distance":"Nearest Wara station 1.1 km",
+                    "phone":"062216813"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.194715, 22.993862]
+                },
+                "properties": {
+                    "id": 5,
+                    "type":"hide"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.1893777, 22.9934593]
+                },
+                "properties": {
+                    "id": 6,
+                    "type":"place",
+                    "icon": "./pic/Group 446.svg",
+                    "name": "河樂廣場 The Spring",
+                    "starrate": "4.4",
+                    "site":"700台南市中西區中正路343-20號",
+                    "distance":"Nearest Wara station 2 km",
+                    "phone":"-"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.1988343, 22.9932687]
+                },
+                "properties": {
+                    "id": 7,
+                    "type":"place",
+                    "icon": "./pic/Group 446.svg",
+                    "name": "蝸牛巷",
+                    "starrate": "4.0",
+                    "site":"700台南市中西區永福路二段",
+                    "distance":"Nearest Wara station 0.5 km",
+                    "phone":"-"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.200893, 22.992257]
+                },
+                "properties": {
+                    "id": 8,
+                    "type":"hide"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.2011744, 22.9946627]
+                },
+                "properties": {
+                    "id": 9,
+                    "type":"food",
+                    "icon": "./pic/Group 441.svg",
+                    "name": "小赤佬干鍋 忠義店",
+                    "starrate": "4.4",
+                    "site":"700台南市中西區忠義路二段139號",
+                    "distance":"Nearest Wara station 0.2 km",
+                    "phone":"-"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.1982165, 22.9973567]
+                },
+                "properties": {
+                    "id": 10,
+                    "type":"place",
+                    "icon": "./pic/Group 446.svg",
+                    "name": "赤崁樓",
+                    "starrate": "4.3",
+                    "site":"700台南市中西區民族路二段212號",
+                    "distance":"Nearest Wara station 0.5 km",
+                    "phone":"062205647"
+                }
+            }
+        ]
     }
+
+    map.data.loadGeoJson(ob);
+    // map.data.addGeoJson(ob);
+    // Data.setStyle() 方法來指定資料外觀
+    map.data.setStyle(function(feature) {
+        return { 'icon': feature.getProperty('icon') };
+    });
+    
+    map.data.addListener('mouseover', function(event) {
+        document.getElementById('card').textContent =
+        event.feature.getProperty('name');
+    });
+
+
 
     infoWindow = new google.maps.InfoWindow();
 
