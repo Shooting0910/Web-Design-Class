@@ -336,6 +336,7 @@ function initMap() {
     });
     
     map.data.addListener('click', function(event) {
+        document.getElementById('cardback').style.height=" 55% " ;
         document.getElementById('name').textContent =
         event.feature.getProperty('name');
         document.getElementById('starrate').textContent =
