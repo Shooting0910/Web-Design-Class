@@ -171,7 +171,8 @@ function initMap() {
                     "icon": "./pic/Group 444.svg",
                     "name": "喝我咖啡 Hold My Cafe‘ ",
                     "starrate": "4.8",
-                    "site":"700台南市中西區康樂街282巷23號",
+                    "pic": "./pic/img 1.jpeg",
+                    "site":"700 台南市中西區康樂街 282 巷 23 號",
                     "distance":"Nearest Wara station 4.1 km",
                     "phone":"-"
                 }
@@ -188,6 +189,7 @@ function initMap() {
                     "icon": "./pic/Group 456.svg",
                     "name": "神農街",
                     "starrate": "4.5",
+                    "pic": "./pic/img 2.jpeg",
                     "site":"700 台南市中西區神農街",
                     "distance":"Nearest Wara station 1.8 km",
                     "phone":"-"
@@ -203,9 +205,10 @@ function initMap() {
                     "id": 3,
                     "type":"food",
                     "icon": "./pic/Group 444.svg",
-                    "name": "品果原萃鍋燒專賣‘ ",
+                    "name": "品果原萃鍋燒專賣 ",
                     "starrate": "4.8",
-                    "site":"700台南市中西區康樂街253號",
+                    "pic": "./pic/img 3.png",
+                    "site":"700 台南市中西區康樂街 253 號",
                     "distance":"Nearest Wara station 3.1 km",
                     "phone":"0981779090"
                 }
@@ -222,7 +225,8 @@ function initMap() {
                     "icon": "./pic/Group 444.svg",
                     "name": "一緒二咖啡",
                     "starrate": "4.5",
-                    "site":"700台南市中西區康樂街160號",
+                    "pic": "./pic/img 4.jpeg",
+                    "site":"700 台南市中西區康樂街 160 號",
                     "distance":"Nearest Wara station 1.1 km",
                     "phone":"062216813"
                 }
@@ -250,7 +254,8 @@ function initMap() {
                     "icon": "./pic/Group 446.svg",
                     "name": "河樂廣場 The Spring",
                     "starrate": "4.4",
-                    "site":"700台南市中西區中正路343-20號",
+                    "pic": "./pic/img 5.jpeg",
+                    "site":"700 台南市中西區中正路 343-20 號",
                     "distance":"Nearest Wara station 2 km",
                     "phone":"-"
                 }
@@ -267,7 +272,8 @@ function initMap() {
                     "icon": "./pic/Group 446.svg",
                     "name": "蝸牛巷",
                     "starrate": "4.0",
-                    "site":"700台南市中西區永福路二段",
+                    "pic": "./pic/img 6.jpeg",
+                    "site":"700 台南市中西區永福路二段",
                     "distance":"Nearest Wara station 0.5 km",
                     "phone":"-"
                 }
@@ -295,7 +301,8 @@ function initMap() {
                     "icon": "./pic/Group 441.svg",
                     "name": "小赤佬干鍋 忠義店",
                     "starrate": "4.4",
-                    "site":"700台南市中西區忠義路二段139號",
+                    "pic": "./pic/img 7.jpeg",
+                    "site":"700 台南市中西區忠義路二段 139 號",
                     "distance":"Nearest Wara station 0.2 km",
                     "phone":"-"
                 }
@@ -312,7 +319,8 @@ function initMap() {
                     "icon": "./pic/Group 446.svg",
                     "name": "赤崁樓",
                     "starrate": "4.3",
-                    "site":"700台南市中西區民族路二段212號",
+                    "pic": "./pic/img 8.jpeg",
+                    "site":"700 台南市中西區民族路二段 212 號",
                     "distance":"Nearest Wara station 0.5 km",
                     "phone":"062205647"
                 }
@@ -320,16 +328,26 @@ function initMap() {
         ]
     }
 
-    map.data.loadGeoJson(ob);
+    map.data.addGeoJson(ob);
     // map.data.addGeoJson(ob);
     // Data.setStyle() 方法來指定資料外觀
     map.data.setStyle(function(feature) {
         return { 'icon': feature.getProperty('icon') };
     });
     
-    map.data.addListener('mouseover', function(event) {
-        document.getElementById('card').textContent =
+    map.data.addListener('click', function(event) {
+        document.getElementById('name').textContent =
         event.feature.getProperty('name');
+        document.getElementById('starrate').textContent =
+        event.feature.getProperty('starrate');
+        document.getElementById('address').textContent =
+        event.feature.getProperty('site');
+        document.getElementById('parkinfo').textContent =
+        event.feature.getProperty('distance');
+        document.getElementById('phone').textContent =
+        event.feature.getProperty('phone');
+        document.getElementById('pic').src =
+        event.feature.getProperty('pic');
     });
 
 
