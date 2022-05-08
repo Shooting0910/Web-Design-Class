@@ -156,14 +156,14 @@ function initMap() {
     // }
 
     //Loading data
-    var ob={
+    var attractinfo={
         "type": "FeatureCollection",
         "features": [
             {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [120.1950812, 22.999562]
+                    "coordinates": [120.19729234873174, 22.999375716846764]
                 },
                 "properties": {
                     "id": 1,
@@ -181,7 +181,7 @@ function initMap() {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [120.1943521, 22.9975715]
+                    "coordinates": [120.19655692597934, 22.9977838594342]
                 },
                 "properties": {
                     "id": 2,
@@ -199,7 +199,7 @@ function initMap() {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [120.1932231, 22.9961912]
+                    "coordinates": [120.19581416407567, 22.996383809237784]
                 },
                 "properties": {
                     "id": 3,
@@ -217,7 +217,7 @@ function initMap() {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [120.1933809, 22.9959239]
+                    "coordinates": [120.19546770878311, 22.996195519442722]
                 },
                 "properties": {
                     "id": 4,
@@ -235,7 +235,7 @@ function initMap() {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [120.194715, 22.993862]
+                    "coordinates": [120.1947177892477,22.994116711919787]
                 },
                 "properties": {
                     "id": 5,
@@ -246,7 +246,7 @@ function initMap() {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [120.1893777, 22.9934593]
+                    "coordinates": [120.1940385683072, 22.993876765724156]
                 },
                 "properties": {
                     "id": 6,
@@ -264,7 +264,7 @@ function initMap() {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [120.1988343, 22.9932687]
+                    "coordinates": [120.20106058365114, 22.993510695625]
                 },
                 "properties": {
                     "id": 7,
@@ -282,7 +282,7 @@ function initMap() {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [120.200893, 22.992257]
+                    "coordinates": [120.20084197575547,22.992474096640272]
                 },
                 "properties": {
                     "id": 8,
@@ -293,7 +293,7 @@ function initMap() {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [120.2011744, 22.9946627]
+                    "coordinates": [120.20335985439367, 22.99484543518141] 
                 },
                 "properties": {
                     "id": 9,
@@ -311,7 +311,7 @@ function initMap() {
                 "type": "Feature",
                 "geometry": {
                     "type": "Point",
-                    "coordinates": [120.1982165, 22.9973567]
+                    "coordinates": [120.20306045515333, 22.997638953249623]
                 },
                 "properties": {
                     "id": 10,
@@ -328,7 +328,7 @@ function initMap() {
         ]
     }
 
-    map.data.addGeoJson(ob);
+    map.data.addGeoJson(attractinfo);
     // map.data.addGeoJson(ob);
     // Data.setStyle() 方法來指定資料外觀
     map.data.setStyle(function(feature) {
