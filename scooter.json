@@ -1,0 +1,149 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.21628594486737, 23.00177290134948]
+            },
+            "properties": {
+                "id": 1,
+                "icon":"./pic/scooter_icon.svg",
+                "number":"A234",
+                "statusicon":"./pic/Group 423.svg",
+                "status":"Can be reserved",
+                "battery":"80%",
+                "km":"12km",
+                "location":"綠色魔法學校站",
+                "area":"成功大學 力行校區"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.21941836179954, 23.002219873305844]
+            },
+            "properties": {
+                "id": 2,
+                "icon":"./pic/scooter_icon.svg",
+                "number":"A234",
+                "statusicon":"./pic/Group 312.svg",
+                "status":"Busy",
+                "battery":"80%",
+                "km":"12km",
+                "location":"醫學院附設醫院站",
+                "area":"成功大學 成杏校區"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.22342021730526, 23.002259376432242]
+            },
+            "properties": {
+                "id": 3,
+                "icon":"./pic/scooter_icon.svg",
+                "number":"A234",
+                "statusicon":"./pic/Group 423.svg",
+                "status":"Can be reserved",
+                "battery":"80%",
+                "km":"12km",
+                "location":"新K館站",
+                "area":"成功大學 敬業校區"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.21677250040514, 23.000435142661768]
+            },
+            "properties": {
+                "id": 4,
+                "icon":"./pic/scooter_icon.svg",
+                "number":"A234",
+                "statusicon":"./pic/Group 423.svg",
+                "status":"Can be reserved",
+                "battery":"80%",
+                "km":"12km",
+                "location":"榕園站",
+                "area":"成功大學 光復校區"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.22011723325117,23.000262820168697]
+            },
+            "properties": {
+                "id": 5,
+                "icon":"./pic/scooter_icon.svg",
+                "number":"A234",
+                "statusicon":"./pic/Group 312.svg",
+                "status":"Busy",
+                "battery":"80%",
+                "km":"12km",
+                "location":"圖書館站",
+                "area":"成功大學 成功校區"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.22247330438341, 22.996545261428338]
+            },
+            "properties": {
+                "id": 6,
+                "icon":"./pic/scooter_icon.svg",
+                "number":"A234",
+                "statusicon":"./pic/Group 423.svg",
+                "status":"Can be reserved",
+                "battery":"80%",
+                "km":"12km",
+                "location":"奇美咖啡館站",
+                "area":"成功大學 自強校區"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.22039932341585, 22.994646435429356]
+            },
+            "properties": {
+                "id": 7,
+                "icon":"./pic/scooter_icon.svg",
+                "number":"A234",
+                "statusicon":"./pic/Group 423.svg",
+                "status":"Can be reserved",
+                "battery":"80%",
+                "km":"12km",
+                "location":"D24 站",
+                "area":"成功大學 勝利校區"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [120.22446654429422, 22.992489850519547]
+            },
+            "properties": {
+                "id": 8,
+                "icon":"./pic/scooter_icon.svg",
+                "number":"A234",
+                "statusicon":"./pic/Group 312.svg",
+                "status":"Busy",
+                "battery":"80%",
+                "km":"12km",
+                "location":"幼兒園站",
+                "area":"成功大學 東寧校區"
+            }
+        }
+    ]
+}

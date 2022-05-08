@@ -42,6 +42,11 @@ body {
     cursor: pointer;
     transform: translate(35vw, 75vh);
 }
+
+.cm-show{
+    transform: translate(35vw, 40vh);
+}
+
 .custom-map-control-button:hover {
     background: rgb(235, 235, 235);
     background-image:url(./pic/navigation.svg) ;
@@ -77,7 +82,7 @@ body {
     transform: translate(80vw, 4vh);
 }
 
-#i-help{
+.ih{
     position: absolute;
     z-index: 1;
     background-image: url(./pic/Group\ 344.svg);
@@ -86,6 +91,10 @@ body {
     height: 3.8vh;
     width: 15vw;
     transform: translate(8vw, 75vh);
+}
+
+.i-h{
+    transform: translate(8vw, 40vh);
 }
 
 #scan-button{
@@ -102,9 +111,9 @@ body {
     color: white;
 }
 
-#cardback{
+.ac{
     width:100%;
-    height: 0;
+    height: 55%;
     bottom: 0;
     border-radius: 50px;
     background-color: #fff;
@@ -112,10 +121,16 @@ body {
     z-index: 2;
     display: flex;
     justify-content: center;
-    transition:height 0.3s;
+    /* transition:height 0.3s; */
+    visibility: hidden;
 }
 
-#card{
+/* 是否要顯示該景點卡 */
+.acshow {
+    visibility: visible;
+}
+
+.a-cardback{
     width: 87.5%;
     
 }
@@ -181,7 +196,130 @@ body {
 }
 
 
+.sc{
+    width:100%;
+    height: 50%;
+    bottom: 0;
+    border-radius: 50px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+}
 
+/* 是否要顯示該景點卡 */
+.scshow {
+    visibility: visible;
+}
+
+.s-cardback{
+    width: 87.2%;
+    display: flex;
+    flex-direction: column;
+}
+
+#up{
+    height:49%;
+    display: flex;
+}
+
+.left{
+    height:100%;
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    height:100%;
+    width: 35%;
+    background-image: url(./pic/Rectangle\ 19.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.line1,.line2,.line3,.line4,.line5{
+    display: flex;
+}
+
+.scooter-icon,.status-icon,.battery-icon,.location-icon{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width:6.7%;
+}
+
+.scooter-icon{
+    background-image: url(./pic/ic_round-electric-scooter.svg);
+    
+}
+
+
+.battery-icon{
+    background-image: url(./pic/carbon_battery-half.svg);
+}
+
+.location-icon{
+    background-image: url(./pic/park.svg);
+}
+
+
+
+#down{
+    height:51%;
+    display: flex;
+    flex-direction: column;
+}
+
+.divided-line{
+    background-color: rgb(190, 186, 186);
+    width:100%;
+    height:1px;
+}
+
+.payment-text{
+    height: 11.5%;
+}
+
+.payment-info{
+    display: flex;
+    width:100%;
+    height:16.3%;
+}
+
+.card-img{
+    background-image: url(./pic/card.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width:16.8%;
+}
+
+.credit-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.arrow-icon{
+    background-image: url(./pic/right\ Verctor.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width:2%;
+}
+
+.reservation{
+    background-color: rgb(57, 122, 218);
+    border-radius: 20px;
+    height: 25.4%;
+    width: 100%;
+    border: 0;
+    font-size: 20pt;
+    color: white;
+}
 
 #navbar{
     height: 6%;

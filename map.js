@@ -155,6 +155,49 @@ function initMap() {
     //     });
     // }
 
+    const locationButton = document.createElement("button");
+    locationButton.setAttribute("id", "myloc");
+    locationButton.classList.add("custom-map-control-button");
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    locationButton.addEventListener("click", () => {
+        // 先確認使用者裝置能不能抓地點
+        if (navigator.geolocation) {
+            //呼叫 JS 的 Geolocation API，跟使用者拿所在位置的經緯度，
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                const pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+
+                // infoWindow.setPosition(pos);
+                // infoWindow.setContent("Location found.");
+                // infoWindow.open(map);
+                map.setCenter(pos);
+
+                //--------下面是呼叫一個新marker------
+                currentPositionMarker = new google.maps.Marker({
+                    //marker的放置位置
+                    position: { 
+                        lat: position.coords.latitude, 
+                        lng: position.coords.longitude,
+                    },
+                    icon:"./pic/my location.svg",
+                    map: map
+                }); 
+                },
+                () => {
+                handleLocationError(true, infoWindow, map.getCenter());
+                }
+            );
+        } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+        }
+    
+    });
+
+
     //Loading data
     var attractinfo={
         "type": "FeatureCollection",
@@ -328,15 +371,179 @@ function initMap() {
         ]
     }
 
-    map.data.addGeoJson(attractinfo);
-    // map.data.addGeoJson(ob);
-    // Data.setStyle() 方法來指定資料外觀
-    map.data.setStyle(function(feature) {
-        return { 'icon': feature.getProperty('icon') };
+    var scooterinfo={
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.21628594486737, 23.00177290134948]
+                },
+                "properties": {
+                    "id": 1,
+                    "icon":"./pic/scooter_icon.svg",
+                    "number":"A234",
+                    "statusicon":"./pic/Group 423.svg",
+                    "status":"Can be reserved",
+                    "battery":"80%",
+                    "km":"12km",
+                    "location":"綠色魔法學校站",
+                    "area":"成功大學 力行校區"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.21941836179954, 23.002219873305844]
+                },
+                "properties": {
+                    "id": 2,
+                    "icon":"./pic/scooter_icon.svg",
+                    "number":"A234",
+                    "statusicon":"./pic/Group 312.svg",
+                    "status":"Busy",
+                    "battery":"80%",
+                    "km":"12km",
+                    "location":"醫學院附設醫院站",
+                    "area":"成功大學 成杏校區"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.22342021730526, 23.002259376432242]
+                },
+                "properties": {
+                    "id": 3,
+                    "icon":"./pic/scooter_icon.svg",
+                    "number":"A234",
+                    "statusicon":"./pic/Group 423.svg",
+                    "status":"Can be reserved",
+                    "battery":"80%",
+                    "km":"12km",
+                    "location":"新K館站",
+                    "area":"成功大學 敬業校區"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.21677250040514, 23.000435142661768]
+                },
+                "properties": {
+                    "id": 4,
+                    "icon":"./pic/scooter_icon.svg",
+                    "number":"A234",
+                    "statusicon":"./pic/Group 423.svg",
+                    "status":"Can be reserved",
+                    "battery":"80%",
+                    "km":"12km",
+                    "location":"榕園站",
+                    "area":"成功大學 光復校區"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.22011723325117,23.000262820168697]
+                },
+                "properties": {
+                    "id": 5,
+                    "icon":"./pic/scooter_icon.svg",
+                    "number":"A234",
+                    "statusicon":"./pic/Group 312.svg",
+                    "status":"Busy",
+                    "battery":"80%",
+                    "km":"12km",
+                    "location":"圖書館站",
+                    "area":"成功大學 成功校區"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.22247330438341, 22.996545261428338]
+                },
+                "properties": {
+                    "id": 6,
+                    "icon":"./pic/scooter_icon.svg",
+                    "number":"A234",
+                    "statusicon":"./pic/Group 423.svg",
+                    "status":"Can be reserved",
+                    "battery":"80%",
+                    "km":"12km",
+                    "location":"奇美咖啡館站",
+                    "area":"成功大學 自強校區"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.22039932341585, 22.994646435429356]
+                },
+                "properties": {
+                    "id": 7,
+                    "icon":"./pic/scooter_icon.svg",
+                    "number":"A234",
+                    "statusicon":"./pic/Group 423.svg",
+                    "status":"Can be reserved",
+                    "battery":"80%",
+                    "km":"12km",
+                    "location":"D24 站",
+                    "area":"成功大學 勝利校區"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [120.22446654429422, 22.992489850519547]
+                },
+                "properties": {
+                    "id": 8,
+                    "icon":"./pic/scooter_icon.svg",
+                    "number":"A234",
+                    "statusicon":"./pic/Group 312.svg",
+                    "status":"Busy",
+                    "battery":"80%",
+                    "km":"12km",
+                    "location":"幼兒園站",
+                    "area":"成功大學 東寧校區"
+                }
+            }
+        ]
+    }
+
+    // ---------------- attraction layer ----------------
+    var layer1 = new google.maps.Data();
+    layer1.addGeoJson(attractinfo);
+
+    // setStyle() 方法來指定資料外觀
+    layer1.setStyle(function(feature) {
+        if(feature.getProperty('type')=='hide'){
+            return {
+                visible: false,
+            }
+        }
+        else{
+            return { 
+                'icon': feature.getProperty('icon') 
+            };
+        }
     });
-    
-    map.data.addListener('click', function(event) {
-        document.getElementById('cardback').style.height=" 55% " ;
+
+
+    layer1.setMap(map);
+    layer1.addListener('click', function(event) {
+        // document.getElementById('scootercard').style.height=" 0% " ;
+        document.getElementById('attractcard').classList.toggle("acshow");
         document.getElementById('name').textContent =
         event.feature.getProperty('name');
         document.getElementById('starrate').textContent =
@@ -351,51 +558,71 @@ function initMap() {
         event.feature.getProperty('pic');
     });
 
-
-
-    infoWindow = new google.maps.InfoWindow();
-
-    const locationButton = document.createElement("button");
-    // locationButton.textContent = "Show Current Location";
-    locationButton.classList.add("custom-map-control-button");
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-    locationButton.addEventListener("click", () => {
-        // 先確認使用者裝置能不能抓地點
-        if (navigator.geolocation) {
-            //呼叫 JS 的 Geolocation API，跟使用者拿所在位置的經緯度，
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                const pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                };
-
-                // infoWindow.setPosition(pos);
-                // infoWindow.setContent("Location found.");
-                // infoWindow.open(map);
-                map.setCenter(pos);
-
-                //--------下面是呼叫一個新marker------
-                currentPositionMarker = new google.maps.Marker({
-                    //marker的放置位置
-                    position: { 
-                        lat: position.coords.latitude, 
-                        lng: position.coords.longitude,
-                    },
-                    icon:"./pic/my location.svg",
-                    map: map
-                }); 
-                },
-                () => {
-                handleLocationError(true, infoWindow, map.getCenter());
-                }
-            );
-        } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-        }
-    
+    // ---------------- scooter layer ----------------
+    var layer2 = new google.maps.Data();
+    layer2.addGeoJson(scooterinfo);
+    layer2.setStyle(function(feature) {
+        return { 'icon': feature.getProperty('icon') };
     });
+    layer2.setMap(map);
+    layer2.addListener('click', function(event) {
+        // document.getElementById('attractcard').style.height=" 0% " ;
+        document.getElementById('scootercard').classList.toggle("scshow");
+        document.getElementById('i-help').classList.toggle("i-h");
+        document.getElementById('myloc').classList.toggle("cm-show");
+        document.getElementById('number').textContent =
+        event.feature.getProperty('number');
+        document.getElementById('status-icon').src =
+        event.feature.getProperty('statusicon');
+        document.getElementById('status').textContent =
+        event.feature.getProperty('status');
+        document.getElementById('battery').textContent =
+        event.feature.getProperty('battery');
+        document.getElementById('km').textContent =
+        event.feature.getProperty('km');
+        document.getElementById('location').textContent =
+        event.feature.getProperty('location');
+        document.getElementById('area').textContent =
+        event.feature.getProperty('area');
+    });
+
+
+    // marker.addListener("click", (e) => {
+    //     let id = "#info-window" + i;
+    //     let infoWindow = document.querySelector(id);
+    //     infoWindow.classList.toggle("show");
+    // });
+
+
+    
+    // map.data.addGeoJson(scooterinfo);
+    
+    // setStyle() 方法來指定資料外觀
+    // map.data.setStyle(function(feature) {
+    //     return { 'icon': feature.getProperty('icon') };
+    // });
+    
+    // map.data.addListener('click', function(event) {
+    //     document.getElementById('cardback').style.height=" 55% " ;
+    //     document.getElementById('name').textContent =
+    //     event.feature.getProperty('name');
+    //     document.getElementById('starrate').textContent =
+    //     event.feature.getProperty('starrate');
+    //     document.getElementById('address').textContent =
+    //     event.feature.getProperty('site');
+    //     document.getElementById('parkinfo').textContent =
+    //     event.feature.getProperty('distance');
+    //     document.getElementById('phone').textContent =
+    //     event.feature.getProperty('phone');
+    //     document.getElementById('pic').src =
+    //     event.feature.getProperty('pic');
+    // });
+
+
+
+
+
+
 
     //call renderer to display directions
     directionsRenderer.setMap(map);
