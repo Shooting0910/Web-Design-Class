@@ -52,28 +52,26 @@ body {
     z-index: 5;
 }
 
+.bcshow2{
+    transform: translate(0, 0);
+    z-index: -1;
+}
+
 #basic-info{
     width: 100%;
     height:7%;
     display: flex;
     margin-bottom: 3%;
-    /* position: absolute;
-    z-index: 2; */
 }
 
-.ih{
-    /* position: absolute;
-    z-index: 1; */
+.i-help{
     background-image: url(./pic/Group\ 344.svg);
     background-repeat: no-repeat;
     background-size: contain;
     width: 16%;
-    /* transform: translate(8vw, 75vh); */
 }
 
-/* .i-h{
-    transform: translate(8vw, 40vh);
-} */
+
 
 .custom-map-control-button {
     /* 點 (.) 來代表現行目錄的名稱 */
@@ -89,9 +87,6 @@ body {
     cursor: pointer;
 }
 
-/* .cm-show{
-    transform: translate(35vw, 40vh);
-} */
 
 .custom-map-control-button:hover {
     background: rgb(235, 235, 235);
@@ -206,8 +201,6 @@ body {
     bottom: 0;
     border-radius: 50px;
     background-color: #fff;
-    /* position: absolute;
-    z-index: 4; */
     display: none;
     justify-content: center;
     visibility: hidden;
@@ -325,6 +318,185 @@ body {
     font-size: 20pt;
     color: white;
 }
+
+.rc{
+    position: absolute;
+    z-index: 7;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    height:30%;
+    bottom:0;
+    transform: translate(0, -30%);
+    visibility: hidden;
+}
+
+/* .rcshow {
+    visibility: visible;
+} */
+
+#basic-info2{
+    height:7%;
+    display: flex;
+    margin-bottom: 3%;
+}
+
+.i-help2{
+    background-image: url(./pic/Group\ 344.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 16%;
+}
+
+
+.custom-map-control-button2 {
+    /* 點 (.) 來代表現行目錄的名稱 */
+    background-image:url(./pic/navigation.svg) ;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    background-color: #fff;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 8%;
+    cursor: pointer;
+}
+
+
+.custom-map-control-button2:hover {
+    background: rgb(235, 235, 235);
+    background-image:url(./pic/navigation.svg) ;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+}
+
+.small-scan-button{
+    background-color: rgb(57, 122, 218);
+    border: 0;
+    border-radius: 20px;
+    width: 40%;
+    background-position: center;
+    display: flex;
+}
+
+.small-scan-button-icon{
+    background-image:url(./pic/fluent_scan-dash-20-filled.svg) ;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    width:10%;
+    height: 100%;
+}
+
+
+.small-scan-button-text{
+    /* font-size: 20pt; */
+    color: white;
+}
+
+.reservecard{
+    width:100%;
+    height: 90%;
+    bottom: 0;
+    border-radius: 50px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.scooter-info{
+    display: flex;
+    width: 100%;
+    height: 10%;
+}
+
+.scooter-icon2,.gray-arrow-icon{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.scooter-icon2{
+    background-image: url(./pic/ic_round-electric-scooter.svg);
+    width:6.7%;
+}
+
+.gray-arrow-icon{
+    background-image: url(./pic/fluent_scan-dash-20-filled.svg);
+    width:7%;
+}
+
+.divided-line2{
+    background-color: rgb(190, 186, 186);
+    width:90%;
+    height:1px;
+}
+
+.middle-container{
+    display: flex;
+    height: 50%;
+}
+
+.left-container{
+    width:35%;
+    display:flex;
+    flex-direction: column;
+}
+
+#battery{
+    height: 30%;
+}
+
+.bigbattery{
+    width: 100%;
+    height: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(/pic/Group\ 347.svg);
+}
+
+.divided-line3{
+    background-color: rgb(190, 186, 186);
+    width:1px;
+    height:80%;
+    background-position: center;
+}
+
+.right-container{
+    width: 24%;
+    display:flex;
+    flex-direction: column;
+}
+
+
+.right-up{
+    width: 100%;
+    height: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(/pic/Rectangle\ 19.svg);
+}
+
+.location-container{
+    display: flex;
+    height:10%
+}
+
+.location-icon2{
+    width: 10%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url(/pic/park.svg);
+}
+
+
+
 
 #navbar{
     height: 6%;

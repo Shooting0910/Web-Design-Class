@@ -461,7 +461,7 @@ function initMap() {
     layer2.setMap(map);
     layer2.addListener('click', function(event) {
         // document.getElementById('attractcard').style.height=" 0% " ;
-        document.getElementById('bottomcard').classList.toggle("bcshow");
+        document.getElementById('bottomcontainer').classList.toggle("bcshow");
         document.getElementById('scootercard').classList.toggle("scshow");
         document.getElementById('number').textContent =
         event.feature.getProperty('number');
@@ -480,8 +480,17 @@ function initMap() {
     });
 
     const reserveButton = document.getElementById("reservation");
-    reserveButton.addEventListener("click", function() {
-        document.getElementById('buttomcard').style.height=" 0% " ;
+    reserveButton.addEventListener("click", function(event) {
+        document.getElementById('bottomcontainer').classList.toggle("bcshow2");
+        document.getElementById('reservecontainer').style.visibility="visible" ;
+        document.getElementById('number2').textContent =
+        event.feature.getProperty('number');
+        document.getElementById('battery').textContent =
+        event.feature.getProperty('battery');
+        document.getElementById('location2').textContent =
+        event.feature.getProperty('location');
+        document.getElementById('area2').textContent =
+        event.feature.getProperty('area');
     });
         
 }
