@@ -55,110 +55,8 @@ function initMap() {
         ]
     });
 
-    // ---------------- Customized Markers ----------------
-    // const icons = {
-    //     scooter: {
-    //         icon: "./pic/scooter_icon.svg",
-    //     },
-    //     food: {
-    //         icon: "./pic/Group 400.svg",
-    //     },
-    //     place:{
-    //         icon:"./pic/Group 397.svg"
-    //     },
-    //     park:{
-    //         icon:"./pic/Group 398.svg"
-    //     }
-    // };
 
-    // const features = [
-    //     {
-    //         position: new google.maps.LatLng(22.9969253, 120.2222067),
-    //         type: "scooter",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.9849686, 120.2168692),
-    //         type: "food",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(23.0058263, 120.2174345),
-    //         type: "food",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.9864615, 120.2146283),
-    //         type: "food",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(23.0087593, 120.2093936),
-    //         type: "food",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.9930141, 120.2267743),
-    //         type: "food",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.9882692, 120.212799),
-    //         type: "food",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.9936595, 120.1918606),
-    //         type: "place",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.9973518, 120.2005071),
-    //         type: "place",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.9917925, 120.2003345),
-    //         type: "place",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(23.0015754, 120.2138934),
-    //         type: "park",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(23.0023909, 120.2184348),
-    //         type: "park",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(23.002052, 120.2204054),
-    //         type: "park",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(23.0006228, 120.2141547),
-    //         type: "park",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.9989394, 120.2144953),
-    //         type: "park",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.996328, 120.2199842),
-    //         type: "park",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.9956073, 120.2022019),
-    //         type: "park",
-    //     },
-    //     {
-    //         position: new google.maps.LatLng(22.9922232, 120.2215161),
-    //         type: "park",
-    //     },
-    // ];
-
-    // Create markers.
-    // for (let i = 0; i < features.length; i++) {
-    //     const marker = new google.maps.Marker({
-    //     position: features[i].position,
-    //     icon: icons[features[i].type].icon,
-    //     map: map,
-    //     });
-    // }
-
-    const locationButton = document.createElement("button");
-    locationButton.setAttribute("id", "myloc");
-    locationButton.classList.add("custom-map-control-button");
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    const locationButton = document.getElementById("currentloc");
     locationButton.addEventListener("click", () => {
         // 先確認使用者裝置能不能抓地點
         if (navigator.geolocation) {
@@ -170,9 +68,6 @@ function initMap() {
                     lng: position.coords.longitude,
                 };
 
-                // infoWindow.setPosition(pos);
-                // infoWindow.setContent("Location found.");
-                // infoWindow.open(map);
                 map.setCenter(pos);
 
                 //--------下面是呼叫一個新marker------
@@ -542,7 +437,6 @@ function initMap() {
 
     layer1.setMap(map);
     layer1.addListener('click', function(event) {
-        // document.getElementById('scootercard').style.height=" 0% " ;
         document.getElementById('attractcard').classList.toggle("acshow");
         document.getElementById('name').textContent =
         event.feature.getProperty('name');
@@ -567,9 +461,8 @@ function initMap() {
     layer2.setMap(map);
     layer2.addListener('click', function(event) {
         // document.getElementById('attractcard').style.height=" 0% " ;
+        document.getElementById('bottomcard').classList.toggle("bcshow");
         document.getElementById('scootercard').classList.toggle("scshow");
-        document.getElementById('i-help').classList.toggle("i-h");
-        document.getElementById('myloc').classList.toggle("cm-show");
         document.getElementById('number').textContent =
         event.feature.getProperty('number');
         document.getElementById('status-icon').src =
@@ -586,89 +479,12 @@ function initMap() {
         event.feature.getProperty('area');
     });
 
-
-    // marker.addListener("click", (e) => {
-    //     let id = "#info-window" + i;
-    //     let infoWindow = document.querySelector(id);
-    //     infoWindow.classList.toggle("show");
-    // });
-
-
-    
-    // map.data.addGeoJson(scooterinfo);
-    
-    // setStyle() 方法來指定資料外觀
-    // map.data.setStyle(function(feature) {
-    //     return { 'icon': feature.getProperty('icon') };
-    // });
-    
-    // map.data.addListener('click', function(event) {
-    //     document.getElementById('cardback').style.height=" 55% " ;
-    //     document.getElementById('name').textContent =
-    //     event.feature.getProperty('name');
-    //     document.getElementById('starrate').textContent =
-    //     event.feature.getProperty('starrate');
-    //     document.getElementById('address').textContent =
-    //     event.feature.getProperty('site');
-    //     document.getElementById('parkinfo').textContent =
-    //     event.feature.getProperty('distance');
-    //     document.getElementById('phone').textContent =
-    //     event.feature.getProperty('phone');
-    //     document.getElementById('pic').src =
-    //     event.feature.getProperty('pic');
-    // });
-
-
-
-
-
-
-
-    //call renderer to display directions
-    directionsRenderer.setMap(map);
-
-    const onChangeHandler = function () {
-        calculateAndDisplayRoute(directionsService, directionsRenderer);
-    };
-
-    document.getElementById("start").addEventListener("change", onChangeHandler);
-    document.getElementById("end").addEventListener("change", onChangeHandler);
-    }
-
-    function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-    directionsService
-        .route({
-        // origin: {
-        //     query: document.getElementById("start").value,
-        // },
-        // destination: {
-        //     query: document.getElementById("end").value,
-        // },
-        origin: {
-            query: features[i].position ,
-        },
-        destination: {
-            query: features[i].position ,
-        },
-        // origin: features[i].position ,
-        // destination: features[i].position,
-        travelMode: google.maps.TravelMode.BICYCLING,
-        })
-        .then((response) => {
-        directionsRenderer.setDirections(response);
-        })
-        .catch((e) => window.alert("Directions request failed due to " + status));
+    const reserveButton = document.getElementById("reservation");
+    reserveButton.addEventListener("click", function() {
+        document.getElementById('buttomcard').style.height=" 0% " ;
+    });
         
 }
 
-// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-//     infoWindow.setPosition(pos);
-//     infoWindow.setContent(
-//         browserHasGeolocation
-//         ? "Error: The Geolocation service failed."
-//         : "Error: Your browser doesn't support geolocation."
-//     );
-//     infoWindow.open(map);
-// }
 
 window.initMap = initMap;

@@ -9,52 +9,6 @@ body {
     padding: 0;
 }
 
-/* #floating-panel {
-    position: absolute;
-    top: 10px;
-    z-index: 5;
-    background-color: #fff;
-    padding: 5px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-    font-family: "Roboto", "sans-serif";
-    line-height: 30px;
-    padding-left: 10px;
-    transform: translate(125%);
-} */
-
-.custom-map-control-button {
-    /* 點 (.) 來代表現行目錄的名稱 */
-    background-image:url(./pic/navigation.svg) ;
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center;
-    background-color: #fff;
-    border: 0;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    /* box-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.3); */
-    margin: 10px;
-    padding: 0 0.5em;
-    height: 85px;
-    width: 85px;
-    cursor: pointer;
-    transform: translate(35vw, 75vh);
-}
-
-.cm-show{
-    transform: translate(35vw, 40vh);
-}
-
-.custom-map-control-button:hover {
-    background: rgb(235, 235, 235);
-    background-image:url(./pic/navigation.svg) ;
-    background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: center;
-}
-
 #save-button,#eye-button{
     position: absolute;
     z-index: 1;
@@ -82,19 +36,69 @@ body {
     transform: translate(80vw, 4vh);
 }
 
-.ih{
+.bc{
     position: absolute;
-    z-index: 1;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height:43.8%;
+    bottom:0;
+    transform: translate(0, 40%);
+}
+
+.bcshow{
+    transform: translate(0, 0);
+    z-index: 5;
+}
+
+#basic-info{
+    width: 100%;
+    height:7%;
+    display: flex;
+    margin-bottom: 3%;
+    /* position: absolute;
+    z-index: 2; */
+}
+
+.ih{
+    /* position: absolute;
+    z-index: 1; */
     background-image: url(./pic/Group\ 344.svg);
     background-repeat: no-repeat;
     background-size: contain;
-    height: 3.8vh;
-    width: 15vw;
-    transform: translate(8vw, 75vh);
+    width: 16%;
+    /* transform: translate(8vw, 75vh); */
 }
 
-.i-h{
+/* .i-h{
     transform: translate(8vw, 40vh);
+} */
+
+.custom-map-control-button {
+    /* 點 (.) 來代表現行目錄的名稱 */
+    background-image:url(./pic/navigation.svg) ;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    background-color: #fff;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 8%;
+    cursor: pointer;
+}
+
+/* .cm-show{
+    transform: translate(35vw, 40vh);
+} */
+
+.custom-map-control-button:hover {
+    background: rgb(235, 235, 235);
+    background-image:url(./pic/navigation.svg) ;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
 }
 
 #scan-button{
@@ -118,7 +122,7 @@ body {
     border-radius: 50px;
     background-color: #fff;
     position: absolute;
-    z-index: 2;
+    z-index: 4;
     display: flex;
     justify-content: center;
     /* transition:height 0.3s; */
@@ -198,19 +202,20 @@ body {
 
 .sc{
     width:100%;
-    height: 50%;
+    height: 90%;
     bottom: 0;
     border-radius: 50px;
     background-color: #fff;
-    position: absolute;
-    z-index: 2;
-    display: flex;
+    /* position: absolute;
+    z-index: 4; */
+    display: none;
     justify-content: center;
     visibility: hidden;
 }
 
 /* 是否要顯示該景點卡 */
 .scshow {
+    display: flex;
     visibility: visible;
 }
 
@@ -311,7 +316,7 @@ body {
     width:2%;
 }
 
-.reservation{
+#reservation{
     background-color: rgb(57, 122, 218);
     border-radius: 20px;
     height: 25.4%;
@@ -324,6 +329,7 @@ body {
 #navbar{
     height: 6%;
     position: fixed;
+    z-index: 3;
     width: 100%;
     background-color: #fff;
     display: flex;
